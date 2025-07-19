@@ -1,7 +1,12 @@
-const args = process.argv.slice(2);
-const num = parseInt(args[0], 10);
+const arg = process.argv[2];
 
-if (!isNaN(num) && args[0] !== undefined) {
-  console.log(`My number: ${num}`);
+if (arg === undefined) {
+    console.log("Not a number");
 } else {
-  console.log("Not a number");
+    const num = Number(arg);
+    if (Number.isInteger(num)) {
+        console.log(`My number: ${num}`);
+    } else {
+        console.log("Not a number");
+    }
+}
